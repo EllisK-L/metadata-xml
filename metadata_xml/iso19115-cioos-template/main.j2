@@ -491,7 +491,7 @@
                   <gml:beginPosition indeterminatePosition="unknown" />
                   {% endif %}
 
-                  {% if record['identification']['temporal_end'] %}
+                  {% if record['identification']['temporal_end'] and not record['identification']['temporal_end'] == 'now' %}
                   <gml:endPosition>{{- record['identification']['temporal_end']|normalize_datestring -}}</gml:endPosition>
                   {% elif not record['identification']['progress_code'] or record['identification']['progress_code'] == 'onGoing' %}
                   <gml:endPosition indeterminatePosition="now" />
